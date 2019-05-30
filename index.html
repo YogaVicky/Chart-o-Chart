@@ -10,13 +10,19 @@
 	<title></title>
 </head>
 <body>
+	<div class="jumbotron text-center" >
+  		<h1>Mood Tracker</h1>
+	</div>
 	<div class="container">
 	<canvas id="myChart"></canvas>
+	</div>
+	<div class="jumbotron text-center" style="margin-bottom:0">
+  		<p>ThankYou for using Mood Tracker!</p>
 	</div>
 	<script type="text/javascript">
 		var myChart = document.getElementById('myChart').getContext('2d');
 		var barChart = new Chart(myChart , {
-			type : 'bar' , 
+			type : 'pie' , 
 			data : {
 				labels : ['Happy' , 'Sad' , 'Angry'] ,
 				datasets : [{
@@ -25,6 +31,12 @@
 						35,
 						25, 
 						40
+					] ,
+					// backgroundColor : 'green'
+					backgroundColor : [
+						'#80ff00' ,
+						'#ffff1a' ,
+						'#e60000'
 					]
 				}]
 			} , 
