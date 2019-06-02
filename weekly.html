@@ -51,7 +51,7 @@
 	  		<p>ThankYou for using Mood Tracker!</p>
 		</div>
 		</div>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		var myChart = document.getElementById('weekstatgraph').getContext('2d');
 		var weekstatgraph = new Chart(myChart , {
 			type : 'line' , 
@@ -79,7 +79,83 @@
         				}
     				}
 		});
-	</script>	
+	</script>	 -->	
+
+	<script>
+		var myChart = document.getElementById("weekstatgraph");
+
+		Chart.defaults.global.defaultFontFamily = "Lato";
+		Chart.defaults.global.defaultFontSize = 18;
+
+		var dataFirst = {
+			label: "Happy",
+			data: [0, 59, 75, 20, 20, 55, 40],
+			lineTension: 0.3,
+			fill: false,
+			borderColor: '#80ff00',
+			backgroundColor: 'transparent',
+			pointBorderColor: '#80ff00',
+			pointBackgroundColor: '#80ff00',
+			pointRadius: 5,
+			pointHoverRadius: 15,
+			pointHitRadius: 30,
+			pointBorderWidth: 2
+		};
+
+		var dataSecond = {
+			label: "Sad",
+			data: [20, 15, 60, 60, 65, 30, 70],
+			lineTension: 0.3,
+			fill: false,
+			borderColor: '#ffff1a',
+			backgroundColor: 'transparent',
+			pointBorderColor: '#ffff1a',
+			pointBackgroundColor: '#ffff1a',
+			pointRadius: 5,
+			pointHoverRadius: 15,
+			pointHitRadius: 30,
+			pointBorderWidth: 2
+		};
+
+		var dataThird = {
+			label: "Angry",
+			data: [27, 17, 67, 67, 67, 37, 77],
+			lineTension: 0.3,
+			fill: false,
+			borderColor: '#e60000',
+			backgroundColor: 'transparent',
+			pointBorderColor: '#e60000',
+			pointBackgroundColor: '#e60000',
+			pointRadius: 5,
+			pointHoverRadius: 15,
+			pointHitRadius: 30,
+			pointBorderWidth: 2
+		};
+
+		var speedData = {
+		labels: ["1", "2", "3", "4", "5", "6", "7"],
+		datasets: [dataFirst, dataSecond , dataThird]
+		};
+
+		var chartOptions = {
+		legend: {
+			display: true,
+			position: 'top',
+			labels: {
+			fontColor: 'white'
+			}
+		}
+		};
+
+		var weekstatgraph = new Chart(myChart, {
+		type: 'line',
+		data: speedData,
+		options: chartOptions
+		});
+	</script>
+
+
+
 	<script type="text/javascript">
 		var myChart = document.getElementById('pieChart1').getContext('2d');
 		var pieChart1 = new Chart(myChart , {
